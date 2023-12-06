@@ -2,23 +2,17 @@
   "users": [
     {
       "id": 1,
+      "customerId": "1234567890",
+      "password": "admin",
       "firstName": "Akarsh",
       "lastName": "Tyagi"
     },
     {
       "id": 2,
+      "customerId": "5678901234",
+      "password": "Niyati",
       "firstName": "Hardik",
       "lastName": "Gaba"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
