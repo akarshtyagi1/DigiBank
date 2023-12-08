@@ -1,0 +1,24 @@
+.transactions-main {
+  margin-top: 30px;
+  p {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  .transactions-inner {
+    width: 80%;
+    margin: auto;
+    min-width: 700px;
+
+    .nothing {
+      margin: 30px;
+      padding: 10px;
+      color: gray;
+      font-style: italic;
+      font-size: 1.3rem;
+      text-align: center;
+      border: 0.5px solid gray;
+      border-radius: 10px;
+    }
+  }
+}

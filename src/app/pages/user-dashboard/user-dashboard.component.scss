@@ -1,0 +1,105 @@
+@import "../../../globalStyles.scss";
+
+@mixin accountsMenu {
+  .accounts-block-menu {
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    justify-content: space-around;
+    border: 1px solid lightgray;
+
+    .accounts-block-menu-item {
+      text-align: center;
+      padding: 5px;
+      .icon-wrapper {
+        width: fit-content;
+        height: auto;
+        margin: auto;
+        padding: 10px;
+        border-radius: 100px;
+        background-color: $primary-bg-light;
+        color: white;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.dashboard-main {
+  height: 100%;
+  .dashboard-inner {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+
+    .dashboard-main-left {
+      flex-basis: 20%;
+    }
+
+    .dashboard-main-center {
+      width: 80%;
+      margin: 0 20px;
+
+      .accounts-block {
+        padding: 10px;
+        border: 0.5px solid lightgray;
+        border-radius: 20px;
+        box-shadow: 1px 5px 10px 0 rgba(198, 198, 198, 0.5);
+
+        .section-heading {
+          font-size: 1.5rem;
+          font-weight: 300;
+          padding: 10px;
+        }
+        @include accountsMenu;
+      }
+
+      .accounts-card-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .accounts-card {
+          flex-grow: 1;
+          margin-right: 10px;
+          padding: 10px 20px;
+          border: 0.5px solid lightgray;
+          border-radius: 20px;
+          box-shadow: 1px 5px 10px 0 rgba(198, 198, 198, 0.5);
+
+          div {
+            margin-bottom: 5px;
+          }
+
+          .title {
+            font-size: 0.8rem;
+          }
+          .total-balance {
+            font-weight: 700;
+          }
+          .sub-title {
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: $primary-bg;
+          }
+          .sub-value {
+            font-weight: 700;
+            font-size: 0.7rem;
+          }
+        }
+      }
+
+      .dashboard-main-center-menu {
+        @include accountsMenu;
+      }
+    }
+
+    .dashboard-main-right {
+      flex-basis: 20%;
+    }
+  }
+}

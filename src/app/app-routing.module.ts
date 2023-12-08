@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { authGuard } from './core/guards/auth.guard';
+import { TransactionHistoryComponent } from './pages/transaction-history/transaction-history.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,10 @@ const routes: Routes = [
     path: 'dashboard',
     component: UserDashboardComponent,
     canActivate: [authGuard],
+  },
+  {
+    path: 'transactions/:accountNumber',
+    component: TransactionHistoryComponent,
   },
 ];
 

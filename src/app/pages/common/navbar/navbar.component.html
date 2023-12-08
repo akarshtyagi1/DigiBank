@@ -14,14 +14,14 @@
         <div class="navbar-search">
           <input placeholder="Search services" />
         </div>
-        <button mat-raised-button *ngIf="isLoggedIn" routerLink="/login">
+        <button mat-raised-button *ngIf="!isLoggedIn" routerLink="/login">
           Login
         </button>
         <button
+          (click)="logout()"
           mat-raised-button
-          *ngIf="!isLoggedIn"
           routerLink="/login"
-          (onclick)="logout()"
+          *ngIf="isLoggedIn"
         >
           LogOut
         </button>

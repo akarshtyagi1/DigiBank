@@ -11,21 +11,25 @@ import { Observable, map } from 'rxjs';
 })
 export class AuthService {
   constructor(private master: MasterService) {}
-  private authenticated: boolean = false;
-  private user: User | null = null;
+
+  isLoggedIn: boolean = sessionStorage.getItem('isAuthenticated') === 'true';
 
   authenticate(credentials: Login): Observable<User> {
     return this.getAllUsers().pipe(
       map((users: User[]) => {
-        const authenticatedUser = users.find(
+        const authenticatedUser: User | undefined = users.find(
           (user) =>
             user.customerId === credentials.customerId &&
             user.password === credentials.password
         );
         console.log(authenticatedUser);
         if (authenticatedUser) {
-          this.authenticated = true;
-          this.user = authenticatedUser;
+          this.isLoggedIn = true;
+          sessionStorage.setItem(
+            'authenticatedUser',
+            JSON.stringify(authenticatedUser)
+          );
+          sessionStorage.setItem('isAuthenticated', 'true');
           return authenticatedUser;
         } else {
           throw new Error('Invalid User');
@@ -35,18 +39,25 @@ export class AuthService {
   }
 
   logout() {
-    this.authenticated = false;
-    this.user = null;
+    sessionStorage.setItem('isAuthenticated', 'false');
+    sessionStorage.removeItem('authenticatedUser');
   }
+
   getAllUsers(): Observable<User[]> {
     return this.master.get(environment.api + APIConstant.user.getAllUsers);
   }
 
-  getAuthenticatedUser(): User | null {
-    return this.user;
+  getAuthenticatedUser(): User | undefined {
+    const userString = sessionStorage.getItem('authenticatedUser');
+    if (userString) {
+      const user: User = JSON.parse(userString);
+      return user;
+    } else {
+      return undefined;
+    }
   }
 
   isAuthenticated(): boolean {
-    return this.authenticated;
+    return this.isLoggedIn;
   }
 }

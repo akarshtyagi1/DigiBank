@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
   faBell = faBell;
   isLoginPage: boolean = false;
-  isLoggedIn = this.authService.isAuthenticated();
+  isLoggedIn = this.authService.isLoggedIn;
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
+    this.isLoggedIn = false;
     this.authService.logout();
   }
 }
