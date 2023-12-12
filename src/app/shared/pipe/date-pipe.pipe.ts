@@ -11,7 +11,7 @@ export class DatePipePipe implements PipeTransform {
     // Use Angular's DatePipe for formatting
     const formattedDate = new DatePipe('en-US').transform(
       date,
-      'yyyy-MMM-dd hh:mm a'
+      'dd-MMM-yyyy hh:mm a'
     );
 
     return formattedDate;

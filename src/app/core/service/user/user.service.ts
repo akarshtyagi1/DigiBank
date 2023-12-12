@@ -70,29 +70,36 @@ export class UserService {
           if (data.accountDetails[i].accountNumber == transfer.payerAccount) {
             data.accountDetails[i].balance =
               data.accountDetails[i].balance - transfer.amount;
-            const transaction = new Transactions(
-              'Debit',
-              transfer.payerAccount,
-              transfer.amount,
-              data.accountDetails[i].balance,
-              '',
-              new Date().toISOString(),
-              transfer.payeeAccount
-            );
-            data.accountDetails[i].transactions.push(transaction);
-            console.log(data);
-            this.master
-              .put(
-                environment.api + APIConstant.user.getAllUsers + '/' + data.id,
-                data
-              )
-              .subscribe({
-                error: (error) => console.log(error),
-              });
+            if (data.accountDetails[i].balance >= 0) {
+              const transaction = new Transactions(
+                'Debit',
+                transfer.payerAccount,
+                transfer.amount,
+                data.accountDetails[i].balance,
+                '',
+                new Date().toISOString(),
+                transfer.payeeAccount
+              );
+              data.accountDetails[i].transactions.push(transaction);
+              this.master
+                .put(
+                  environment.api +
+                    APIConstant.user.getAllUsers +
+                    '/' +
+                    data.id,
+                  data
+                )
+                .subscribe({
+                  error: (error) => console.log(error),
+                });
+            } else {
+            }
+            break;
           }
         }
       },
     });
+
     this.getUserDetails(transfer.payeeAccount).subscribe({
       next: (data) => {
         for (let i = 0; i < data.accountDetails.length; i++) {

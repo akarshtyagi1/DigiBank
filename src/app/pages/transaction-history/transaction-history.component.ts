@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserService } from '../../core/service/user/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Transactions } from '../../core/models/class/transactions';
 import { AuthService } from '../../core/service/auth/auth.service';
 import { User } from '../../core/models/class/user';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { AccountDetails } from '../../core/models/class/account-details';
@@ -21,17 +20,12 @@ export class TransactionHistoryComponent implements OnInit {
     private userServices: UserService,
     private activatedRoute: ActivatedRoute,
     private authService: AuthService,
-    private fb: FormBuilder
+    private router: Router
   ) {}
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  transferForm: FormGroup = this.fb.group({
-    amount: [0, Validators.min(100000)],
-    payerAccount: ['', Validators.required],
-    payeeAccount: ['', Validators.required],
-  });
   faTelegram = faTelegram;
   accountNumber: string = '';
   transactions?: Transactions[];
@@ -43,6 +37,7 @@ export class TransactionHistoryComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.accountNumber = params['accountNumber'];
     });
+                                        
     this.userServices
       .getTrans(this.userServices.getCustomerId(), this.accountNumber)
       .subscribe((data) => {
@@ -79,8 +74,9 @@ export class TransactionHistoryComponent implements OnInit {
     });
   }
 
-  transfer() {
-    this.userServices.transferFunds(this.transferForm.value);
+  goToTransfer() {
+    sessionStorage.setItem('accountNumber', this.accountNumber);
+    this.router.navigate(['/transfer']);
   }
 
   displayedColumns: string[] = [

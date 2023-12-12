@@ -1,75 +1,39 @@
 <div class="transactions-main">
   <div class="transactions-inner">
-    <div>
-      <form [formGroup]="transferForm" (ngSubmit)="transfer()">
-        <input
-          name="amount"
-          formControlName="amount"
-          type="number"
-          inputmode="numeric"
-        />
-        <select
-          for="selectedPayer"
-          name="payerAccount"
-          formControlName="payerAccount"
-        >
-          <option
-            id="selectedPayer"
-            [value]="account.accountNumber"
-            *ngFor="let account of user?.accountDetails"
-          >
-            {{
-              (account.accountNumber | accountNumber) + "-" + user?.firstName
-            }}
-          </option>
-        </select>
-        <select
-          for="selectedPayee"
-          name="payeeAccount"
-          formControlName="payeeAccount"
-        >
-          <option
-            id="selectedPayee"
-            [value]="beneficiary.accountNumber"
-            *ngFor="let beneficiary of user?.beneficiaries"
-          >
-            {{
-              (beneficiary.accountNumber | accountNumber) +
-                "-" +
-                beneficiary.name
-            }}
-          </option>
-        </select>
-        <button>Transfer</button>
-      </form>
-    </div>
+
     <div class="account-details">
-      <div class="account-details-left">
+      <div class="account-details-left shadow">
         <div>
           <p>Account Number</p>
           <p>{{ accountNumber | accountNumber }}</p>
         </div>
         <div>
           <p>Name</p>
-          <p>{{ user?.firstName + " " + user?.lastName }}</p>
+          <p>{{ user?.firstName + " " + user?.lastName | uppercase }}</p>
         </div>
         <div>
           <p>Type</p>
-          <p>{{ selectedAccount?.type }}</p>
+          <p>{{ selectedAccount?.type | uppercase }}</p>
         </div>
       </div>
-      <div class="account-details-center">
+      <div class="account-details-center shadow">
         <p class="title">Closing Balance</p>
-        <p class="closing-balance">{{ selectedAccount?.balance }}</p>
+        <p class="closing-balance">
+          {{ selectedAccount?.balance }}
+        </p>
       </div>
-      <div class="account-details-right">
+      <div
+        routerLink="/transfer"
+        mat-ripple
+        class="account-details-right shadow"
+      >
         <fa-icon class="transfer-funds" [icon]="faTelegram"></fa-icon>
         <p>Transfer <br />Funds</p>
       </div>
     </div>
     <div class="transaction-table">
       <p>Transactions</p>
-      <div *ngIf="transactions?.length != 0" class="table-wrapper">
+      <div *ngIf="transactions?.length != 0" class="table-wrapper shadow">
         <table mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="from">
             <th mat-header-cell *matHeaderCellDef>FROM</th>
@@ -100,7 +64,10 @@
             </td>
           </ng-container>
           <ng-container matColumnDef="balance">
-            <th mat-header-cell *matHeaderCellDef>BALANCE</th>
+            <th mat-header-cell *matHeaderCellDef>
+              CLOSING <br />
+              BALANCE
+            </th>
             <td mat-cell *matCellDef="let element">
               {{ element.closing | currencyPipe }}
             </td>

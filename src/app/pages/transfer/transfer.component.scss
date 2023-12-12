@@ -1,0 +1,56 @@
+@import "../../../globalStyles.scss";
+.transfer-form {
+  .transfer-form-inner {
+    width: 80%;
+    margin: auto;
+    height: 500px;
+    display: flex;
+
+    .form-wrapper {
+      width: 500px;
+      margin: auto;
+      text-align: center;
+      font-size: 20px;
+      background-color: $white;
+      border-radius: 10px;
+      padding: 20px;
+      div {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+      }
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+      select,
+      input {
+        width: 250px;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid lightgray;
+      }
+      option {
+        padding: 200px;
+      }
+
+      .amount-wrapper {
+        input {
+          width: 150px;
+        }
+      }
+      .button-wrapper {
+        justify-content: center;
+        button {
+          background-color: $primary-bg;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.shadow {
+  box-shadow: 1px 5px 10px 0 rgba(198, 198, 198, 0.5);
+}
