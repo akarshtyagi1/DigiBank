@@ -6,6 +6,7 @@
     padding: 10px;
     margin-top: 20px;
     border-radius: 10px;
+    background-color: $white;
     justify-content: space-around;
     border: 1px solid lightgray;
 
@@ -13,8 +14,7 @@
       text-align: center;
       padding: 5px;
       .icon-wrapper {
-        width: fit-content;
-        height: auto;
+        width: 40px;
         margin: auto;
         padding: 10px;
         border-radius: 100px;
@@ -29,6 +29,10 @@
   }
 }
 
+.shadow {
+  box-shadow: 1px 5px 10px 0 rgba(198, 198, 198, 0.5);
+}
+
 .dashboard-main {
   height: 100%;
   .dashboard-inner {
@@ -36,21 +40,17 @@
     display: flex;
     margin: auto;
     margin-top: 20px;
-
-    .dashboard-main-left {
-      flex-basis: 20%;
-    }
+    justify-content: space-between;
 
     .dashboard-main-center {
-      width: 80%;
+      width: 60%;
       margin: 0 20px;
 
       .accounts-block {
         padding: 10px;
         border: 0.5px solid lightgray;
         border-radius: 20px;
-        box-shadow: 1px 5px 10px 0 rgba(198, 198, 198, 0.5);
-
+        background-color: $section-bg;
         .section-heading {
           font-size: 1.5rem;
           font-weight: 300;
@@ -65,11 +65,11 @@
 
         .accounts-card {
           flex-grow: 1;
+          background-color: $white;
           margin-right: 10px;
           padding: 10px 20px;
           border: 0.5px solid lightgray;
           border-radius: 20px;
-          box-shadow: 1px 5px 10px 0 rgba(198, 198, 198, 0.5);
 
           div {
             margin-bottom: 5px;
@@ -97,9 +97,161 @@
         @include accountsMenu;
       }
     }
+  }
+}
 
-    .dashboard-main-right {
-      flex-basis: 20%;
+.accounts-center-bottom {
+  background-color: $section-bg;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  .cc-wrapper {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .credit-card {
+      background-color: $white;
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      width: 320px;
+      padding: 10px;
+      font-size: 13px;
+      .cc-details {
+        display: flex;
+
+        .cc-details-right {
+          margin-left: 10px;
+          .cc-name {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .cc-limits {
+        display: flex;
+        margin-top: 20px;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.dashboard-main-right {
+  background-color: $section-bg;
+  width: 20%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+
+  .cibil-score {
+    background-color: $white;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    font-size: 13px;
+    padding: 20px;
+    color: rgb(74, 73, 73);
+  }
+
+  .right-common {
+    background-color: $white;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    overflow: hidden;
+    padding-top: 5px;
+    margin-top: 20px;
+
+    .right-common-heading {
+      padding: 0 10px;
+    }
+
+    .right-common-item {
+      padding: 0 10px;
+      cursor: pointer;
+      display: flex;
+      padding: 10px;
+      p {
+        font-size: 12px;
+        margin-left: 10px;
+        &:nth-child(1) {
+          color: $primary-bg;
+          font-weight: 500;
+        }
+        span {
+          margin-left: 5px;
+        }
+      }
+
+      &:hover {
+        background-color: $primary-bg-light;
+        color: $white;
+        & .icon-wrapper {
+          background-color: $white !important;
+          color: $primary-bg !important;
+        }
+        & p {
+          color: $white;
+        }
+      }
+
+      .icon-wrapper {
+        text-align: center;
+        width: 50px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 100px;
+        background-color: $primary-bg;
+        color: $white;
+      }
+    }
+  }
+}
+
+.dashboard-main-left {
+  width: 20%;
+  background-color: $section-bg;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+
+  .left-top {
+    border-radius: 10px;
+    border: 1px solid $primary-bg;
+    background-color: $primary-bg-extra-light;
+    padding: 10px;
+    margin: 10px;
+    font-size: 13px;
+    cursor: pointer;
+
+    p:nth-child(odd) {
+      font-weight: 500;
+      margin: 3px 0;
+      color: $primary-bg;
+    }
+  }
+
+  .left-common {
+    border: 1px solid lightgray;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    overflow: hidden;
+
+    & > p:nth-child(1) {
+      padding: 8px 20px 0;
+      font-weight: 500;
+    }
+
+    .left-common-item {
+      padding: 8px 20px;
+      cursor: pointer;
+      color: $primary-bg;
+      font-weight: 500;
+
+      &:hover {
+        background-color: $primary-bg-light;
+        color: white;
+      }
     }
   }
 }

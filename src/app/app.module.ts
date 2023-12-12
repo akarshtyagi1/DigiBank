@@ -11,12 +11,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTableModule } from '@angular/material/table';
+import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './core/service/auth/auth.service';
 import { HomeComponent } from './pages/home/home.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { TransactionHistoryComponent } from './pages/transaction-history/transaction-history.component';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { CurrencyPipePipe } from './shared/pipe/currency-pipe.pipe';
+import { AccountNumberPipe } from './shared/pipe/account-number.pipe';
+import { DatePipePipe } from './shared/pipe/date-pipe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +31,9 @@ import { TransactionHistoryComponent } from './pages/transaction-history/transac
     HomeComponent,
     UserDashboardComponent,
     TransactionHistoryComponent,
+    CurrencyPipePipe,
+    AccountNumberPipe,
+    DatePipePipe,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,8 @@ import { TransactionHistoryComponent } from './pages/transaction-history/transac
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

@@ -47,11 +47,13 @@ export class AuthService {
     return this.master.get(environment.api + APIConstant.user.getAllUsers);
   }
 
-  getAuthenticatedUser(): User | undefined {
+  getAuthenticatedUser(): Observable<User> | undefined {
     const userString = sessionStorage.getItem('authenticatedUser');
     if (userString) {
       const user: User = JSON.parse(userString);
-      return user;
+      return this.master.get(
+        environment.api + APIConstant.user.getAllUsers + '/' + user.id
+      );
     } else {
       return undefined;
     }

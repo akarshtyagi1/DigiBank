@@ -1,8 +1,43 @@
 <div class="dashboard-main">
   <div class="dashboard-inner">
-    <div class="dashboard-main-left">left</div>
+    <div class="dashboard-main-left shadow">
+      <div class="left-top">
+        <p>DG-Finance</p>
+        <p>Effectively analyse all Bank(s) Accounts at one place</p>
+        <p>
+          Click here <span><fa-icon [icon]="faChevRight"></fa-icon></span>
+        </p>
+      </div>
+      <div class="left-top">
+        <p>Your Financial Journey</p>
+        <p>Here are your next steps avail benefits up to 20 and more here.</p>
+        <p>
+          Explore now <span><fa-icon [icon]="faChevRight"></fa-icon></span>
+        </p>
+      </div>
+      <div class="left-common">
+        <p>Services</p>
+        <p class="left-common-item">Generate Card PIN</p>
+        <p class="left-common-item">Increase Debit Card Limit</p>
+        <p class="left-common-item">Block/Unblock Card</p>
+        <p class="left-common-item">Change your Address</p>
+        <p class="left-common-item">Block Credit Card</p>
+      </div>
+      <div class="left-common">
+        <p>What's New?</p>
+        <div class="left-common-item">
+          <p>Pre-Approved Home Loan Offer!</p>
+          <p>Avail instant sanction</p>
+        </div>
+        <div class="left-common-item">
+          <p>New Season. New Higher FD rates!</p>
+          <p>There's no better time to invest! Invest now. T&C a...</p>
+        </div>
+      </div>
+    </div>
+
     <div class="dashboard-main-center">
-      <div class="accounts-block">
+      <div class="accounts-block shadow">
         <p class="section-heading">Accounts</p>
         <div class="accounts-card-wrapper">
           <div *ngFor="let user of user?.accountDetails" class="accounts-card">
@@ -38,7 +73,7 @@
         </div>
       </div>
 
-      <div class="dashboard-main-center-menu">
+      <div class="dashboard-main-center-menu shadow">
         <div class="accounts-block-menu">
           <div
             *ngFor="let item of centerBlock"
@@ -51,8 +86,159 @@
           </div>
         </div>
       </div>
-      <div></div>
+      <div class="accounts-center-bottom shadow">
+        <p>Credit Card</p>
+        <div class="cc-wrapper">
+          <div class="credit-card">
+            <div class="cc-details">
+              <div class="cc-details-left">
+                <img width="130px" src="../../../assets/sample-cc.png" />
+              </div>
+              <div class="cc-details-right">
+                <p class="cc-name">Digibank Platinum Visa</p>
+                <p class="cc-number">5236 2863 7238 2838</p>
+                <a href="#">Modify Limit ></a>
+                <p><a href="">How credit limit works?</a></p>
+              </div>
+            </div>
+            <div class="cc-limits">
+              <div>
+                <p>Available Limit</p>
+                <p>*******</p>
+                <button mat-stroked-button>Pay Bills</button>
+              </div>
+              <div>
+                <p>Outstanding</p>
+                <p>*******</p>
+                <button mat-stroked-button>Details</button>
+              </div>
+              <div>
+                <p>Previous Balance</p>
+                <p>*******</p>
+                <button mat-stroked-button>Statement</button>
+              </div>
+            </div>
+          </div>
+          <div class="credit-card">
+            <div class="cc-details">
+              <div class="cc-details-left">
+                <img width="130px" src="../../../assets/sample-cc.png" />
+              </div>
+              <div class="cc-details-right">
+                <p class="cc-name">Digibank Platinum Visa</p>
+                <p class="cc-number">5236 2863 7238 2838</p>
+                <a href="#">Modify Limit ></a>
+                <p><a href="">How credit limit works?</a></p>
+              </div>
+            </div>
+            <div class="cc-limits">
+              <div>
+                <p>Available Limit</p>
+                <p>*******</p>
+                <button mat-stroked-button>Pay Bills</button>
+              </div>
+              <div>
+                <p>Outstanding</p>
+                <p>*******</p>
+                <button mat-stroked-button>Details</button>
+              </div>
+              <div>
+                <p>Previous Balance</p>
+                <p>*******</p>
+                <button mat-stroked-button>Statement</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="dashboard-main-right">right</div>
+    <div class="dashboard-main-right shadow">
+      <div class="cibil-score">
+        <p>Your Cibil Score Range</p>
+        <h2>705-755</h2>
+        <button mat-stroked-button>Get Actual Score</button>
+      </div>
+      <div class="right-common">
+        <p class="right-common-heading">My Loans</p>
+        <div class="right-common-item">
+          <div class="icon-wrapper">
+            <fa-icon [icon]="faSlider"></fa-icon>
+          </div>
+          <div>
+            <p>
+              Instant Home Loan
+              <span><fa-icon [icon]="faChevRight"></fa-icon></span>
+            </p>
+            <p>Get Instant santion upto Rs.33,25,000</p>
+          </div>
+        </div>
+        <div class="right-common-item">
+          <div class="icon-wrapper">
+            <fa-icon [icon]="faSlider"></fa-icon>
+          </div>
+          <div>
+            <p>
+              Instant Home Loan
+              <span><fa-icon [icon]="faChevRight"></fa-icon></span>
+            </p>
+            <p>Get Instant santion upto Rs.33,25,000</p>
+          </div>
+        </div>
+      </div>
+      <div class="right-common">
+        <p class="right-common-heading">My Loans</p>
+        <div class="right-common-item">
+          <div class="icon-wrapper">
+            <fa-icon [icon]="faSlider"></fa-icon>
+          </div>
+          <div>
+            <p>
+              Instant Home Loan
+              <span><fa-icon [icon]="faChevRight"></fa-icon></span>
+            </p>
+            <p>Get Instant santion upto Rs.33,25,000</p>
+          </div>
+        </div>
+        <div class="right-common-item">
+          <div class="icon-wrapper">
+            <fa-icon [icon]="faSlider"></fa-icon>
+          </div>
+          <div>
+            <p>
+              Instant Home Loan
+              <span><fa-icon [icon]="faChevRight"></fa-icon></span>
+            </p>
+            <p>Get Instant santion upto Rs.33,25,000</p>
+          </div>
+        </div>
+      </div>
+      <div class="right-common">
+        <p class="right-common-heading">My Loans</p>
+        <div class="right-common-item">
+          <div class="icon-wrapper">
+            <fa-icon [icon]="faSlider"></fa-icon>
+          </div>
+          <div>
+            <p>
+              Instant Home Loan
+              <span><fa-icon [icon]="faChevRight"></fa-icon></span>
+            </p>
+            <p>Get Instant santion upto Rs.33,25,000</p>
+          </div>
+        </div>
+        <div class="right-common-item">
+          <div class="icon-wrapper">
+            <fa-icon [icon]="faSlider"></fa-icon>
+          </div>
+          <div>
+            <p>
+              Instant Home Loan
+              <span><fa-icon [icon]="faChevRight"></fa-icon></span>
+            </p>
+            <p>Get Instant santion upto Rs.33,25,000</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

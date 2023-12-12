@@ -12,7 +12,6 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: UserDashboardComponent,
-    canActivate: [authGuard],
   },
   {
     path: 'transactions/:accountNumber',

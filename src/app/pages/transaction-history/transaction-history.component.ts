@@ -1,8 +1,15 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserService } from '../../core/service/user/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { Transactions } from '../../core/models/class/transactions';
+import { AuthService } from '../../core/service/auth/auth.service';
+import { User } from '../../core/models/class/user';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { AccountDetails } from '../../core/models/class/account-details';
+import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-transaction-history',
@@ -12,32 +19,76 @@ import { Transactions } from '../../core/models/class/transactions';
 export class TransactionHistoryComponent implements OnInit {
   constructor(
     private userServices: UserService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService,
+    private fb: FormBuilder
   ) {}
 
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  transferForm: FormGroup = this.fb.group({
+    amount: [0, Validators.min(100000)],
+    payerAccount: ['', Validators.required],
+    payeeAccount: ['', Validators.required],
+  });
+  faTelegram = faTelegram;
   accountNumber: string = '';
-  dataSource: any = null;
   transactions?: Transactions[];
+  dataSource!: MatTableDataSource<any>;
+  user?: User;
+  selectedAccount?: AccountDetails;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.accountNumber = params['accountNumber'];
     });
-    this.loadData();
+    this.userServices
+      .getTrans(this.userServices.getCustomerId(), this.accountNumber)
+      .subscribe((data) => {
+        this.transactions = data;
+        this.dataSource = new MatTableDataSource(this.transactions);
+        this.dataSource.sort = this.sort;
+        this.dataSource.sortingDataAccessor = (item, property) => {
+          switch (property) {
+            case 'timeStamp':
+              return new Date(item.timeStamp);
+            default:
+              return item[property];
+          }
+        };
+        this.dataSource.sort.sort({
+          id: 'timeStamp',
+          start: 'desc',
+          disableClear: false,
+        });
+        this.dataSource.paginator = this.paginator;
+      });
+
+    this.authService.getAuthenticatedUser()?.subscribe({
+      next: (data) => {
+        this.user = data;
+        for (let i = 0; i < this.user.accountDetails.length; i++) {
+          if (
+            this.user.accountDetails[i].accountNumber === this.accountNumber
+          ) {
+            this.selectedAccount = this.user.accountDetails[i];
+          }
+        }
+      },
+    });
   }
 
-  loadData() {
-    this.transactions = this.userServices.getTransactions(this.accountNumber);
-    this.dataSource = new MatTableDataSource(this.transactions);
+  transfer() {
+    this.userServices.transferFunds(this.transferForm.value);
   }
 
   displayedColumns: string[] = [
-    'From',
-    'To',
-    'Name',
-    'Type',
-    'Amount',
-    'Balance',
-    'Time',
+    'from',
+    'to',
+    'type',
+    'amount',
+    'balance',
+    'timeStamp',
   ];
 }

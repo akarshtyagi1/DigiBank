@@ -11,8 +11,12 @@
         <div>
           <label for="customerId">Customer ID/ User ID:</label>
           <input
+            [ngClass]="{
+              'error-border':
+                loginForm.get('customerId')?.invalid &&
+                (loginForm.get('customerId')?.touched || formSubmitted)
+            }"
             name="customerId"
-            required
             formControlName="customerId"
             matTooltip="To know your customer ID, refer your welcome letter/ cheque book."
             matTooltipPosition="above"
@@ -22,15 +26,19 @@
         <div>
           <label for="password">Password/ Pin:</label>
           <input
+            [ngClass]="{
+              'error-border':
+                loginForm!.get('password')?.invalid &&
+                loginForm!.get('password')?.touched
+            }"
             formControlName="password"
             name="password"
             type="password"
-            required
             autocomplete="on"
           />
         </div>
         <div class="login-button">
-          <button mat-raised-button>LOGIN</button>
+          <button type="submit" mat-raised-button>LOGIN</button>
         </div>
       </form>
       <div class="message">

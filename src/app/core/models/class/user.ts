@@ -1,3 +1,4 @@
+import { Beneficiaries } from '../Interface/beneficiaries';
 import { AccountDetails } from './account-details';
 export class User {
   id: number;
@@ -5,6 +6,7 @@ export class User {
   password: string;
   firstName: string;
   lastName: string;
+  beneficiaries: Beneficiaries[];
   accountDetails: AccountDetails[];
 
   constructor(
@@ -13,6 +15,7 @@ export class User {
     password: string,
     firstName: string,
     lastName: string,
+    beneficiaries: Beneficiaries[],
     accountDetails: AccountDetails[]
   ) {
     this.id = id;
@@ -20,6 +23,7 @@ export class User {
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.beneficiaries = beneficiaries;
     this.accountDetails = accountDetails;
   }
 }

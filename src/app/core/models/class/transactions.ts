@@ -1,5 +1,5 @@
 export class Transactions {
-    type: string;
+  type: string;
   from: string;
   to?: string;
   amount: number;

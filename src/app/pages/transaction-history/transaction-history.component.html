@@ -1,44 +1,130 @@
 <div class="transactions-main">
   <div class="transactions-inner">
-    <p>Transactions</p>
-    <div *ngIf="transactions?.length != 0" class="table-wrapper">
-      <table mat-table [dataSource]="dataSource">
-        <ng-container matColumnDef="From">
-          <th mat-header-cell *matHeaderCellDef>FROM</th>
-          <td mat-cell *matCellDef="let element">{{ element.from }}</td>
-        </ng-container>
-        <ng-container matColumnDef="To">
-          <th mat-header-cell *matHeaderCellDef>TO</th>
-          <td mat-cell *matCellDef="let element">{{ element.to }}</td>
-        </ng-container>
-        <ng-container matColumnDef="Name">
-          <th mat-header-cell *matHeaderCellDef>NAME</th>
-          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-        </ng-container>
-        <ng-container matColumnDef="Type">
-          <th mat-header-cell *matHeaderCellDef>TYPE</th>
-          <td mat-cell *matCellDef="let element">
-            {{ element.type | uppercase }}
-          </td>
-        </ng-container>
-        <ng-container matColumnDef="Amount">
-          <th mat-header-cell *matHeaderCellDef>AMOUNT</th>
-          <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
-        </ng-container>
-        <ng-container matColumnDef="Balance">
-          <th mat-header-cell *matHeaderCellDef>BALANCE</th>
-          <td mat-cell *matCellDef="let element">{{ element.closing }}</td>
-        </ng-container>
-        <ng-container matColumnDef="Time">
-          <th mat-header-cell *matHeaderCellDef>DATE</th>
-          <td mat-cell *matCellDef="let element">
-            {{ element.timeStamp | date : "yyyy-MM-dd hh:mm:ss a" }}
-          </td>
-        </ng-container>
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-      </table>
+    <div>
+      <form [formGroup]="transferForm" (ngSubmit)="transfer()">
+        <input
+          name="amount"
+          formControlName="amount"
+          type="number"
+          inputmode="numeric"
+        />
+        <select
+          for="selectedPayer"
+          name="payerAccount"
+          formControlName="payerAccount"
+        >
+          <option
+            id="selectedPayer"
+            [value]="account.accountNumber"
+            *ngFor="let account of user?.accountDetails"
+          >
+            {{
+              (account.accountNumber | accountNumber) + "-" + user?.firstName
+            }}
+          </option>
+        </select>
+        <select
+          for="selectedPayee"
+          name="payeeAccount"
+          formControlName="payeeAccount"
+        >
+          <option
+            id="selectedPayee"
+            [value]="beneficiary.accountNumber"
+            *ngFor="let beneficiary of user?.beneficiaries"
+          >
+            {{
+              (beneficiary.accountNumber | accountNumber) +
+                "-" +
+                beneficiary.name
+            }}
+          </option>
+        </select>
+        <button>Transfer</button>
+      </form>
     </div>
-    <div class="nothing" *ngIf="transactions?.length == 0">Nothing to show</div>
+    <div class="account-details">
+      <div class="account-details-left">
+        <div>
+          <p>Account Number</p>
+          <p>{{ accountNumber | accountNumber }}</p>
+        </div>
+        <div>
+          <p>Name</p>
+          <p>{{ user?.firstName + " " + user?.lastName }}</p>
+        </div>
+        <div>
+          <p>Type</p>
+          <p>{{ selectedAccount?.type }}</p>
+        </div>
+      </div>
+      <div class="account-details-center">
+        <p class="title">Closing Balance</p>
+        <p class="closing-balance">{{ selectedAccount?.balance }}</p>
+      </div>
+      <div class="account-details-right">
+        <fa-icon class="transfer-funds" [icon]="faTelegram"></fa-icon>
+        <p>Transfer <br />Funds</p>
+      </div>
+    </div>
+    <div class="transaction-table">
+      <p>Transactions</p>
+      <div *ngIf="transactions?.length != 0" class="table-wrapper">
+        <table mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="from">
+            <th mat-header-cell *matHeaderCellDef>FROM</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.from | accountNumber }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="to">
+            <th mat-header-cell *matHeaderCellDef>TO</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.to | accountNumber }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>NAME</th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+          </ng-container>
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>TYPE</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.type | uppercase }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>AMOUNT</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.amount | currencyPipe }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="balance">
+            <th mat-header-cell *matHeaderCellDef>BALANCE</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.closing | currencyPipe }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="timeStamp">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>DATE</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.timeStamp | datePipe }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+        <mat-paginator
+          [pageSizeOptions]="[10, 20, 30]"
+          showFirstLastButtons
+          aria-label="Select page of transactions"
+        >
+        </mat-paginator>
+      </div>
+      <div class="nothing" *ngIf="transactions?.length == 0">
+        Nothing to show
+      </div>
+    </div>
   </div>
 </div>

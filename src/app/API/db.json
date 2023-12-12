@@ -6,18 +6,34 @@
       "password": "admin",
       "firstName": "Akarsh",
       "lastName": "Tyagi",
+      "beneficiaries": [
+        {
+          "name": "Hardik Gaba",
+          "accountNumber": "2413412152"
+        }
+      ],
       "accountDetails": [
         {
           "accountNumber": "2897349198",
           "type": "savings",
-          "balance": 45000,
+          "balance": 33000,
           "deposit": 150000,
-          "transactions": []
+          "transactions": [
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 33000,
+              "name": "",
+              "timeStamp": "2023-12-12T10:35:23.594Z"
+            }
+          ]
         },
         {
           "accountNumber": "2897343234",
           "type": "savings",
-          "balance": 40000,
+          "balance": 39910,
           "deposit": 150000,
           "transactions": [
             {
@@ -48,11 +64,21 @@
       "password": "admindGaba",
       "firstName": "Hardik",
       "lastName": "Gaba",
+      "beneficiaries": [
+        {
+          "name": "Akarsh Tyagi-1",
+          "accountNumber": "2897343234"
+        },
+        {
+          "name": "Akarsh Tyagi-2",
+          "accountNumber": "2897349198"
+        }
+      ],
       "accountDetails": [
         {
           "accountNumber": "2413412152",
           "type": "savings",
-          "balance": 60000,
+          "balance": 62000,
           "deposit": 200000,
           "transactions": [
             {
@@ -72,6 +98,15 @@
               "closing": 50000,
               "name": "Oracle",
               "timeStamp": "2023-12-03T18:25:43.511Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 62000,
+              "name": "",
+              "timeStamp": "2023-12-12T10:35:23.622Z"
             }
           ]
         }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from '../../models/class/user';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,8 @@ export class MasterService {
     return this.http.get(url);
   }
 
-  put(url: string, body: any): Observable<any> {
+  put(url: string, body: User): Observable<any> {
+    console.log(url, body);
     return this.http.put(url, body);
   }
 }
