@@ -81,6 +81,7 @@ export class UserService {
                 transfer.payeeAccount
               );
               data.accountDetails[i].transactions.push(transaction);
+              sessionStorage.setItem('authenticatedUser', JSON.stringify(data));
               this.master
                 .put(
                   environment.api +
@@ -125,6 +126,7 @@ export class UserService {
               .subscribe({
                 error: (error) => console.log(error),
               });
+            break;
           }
         }
       },

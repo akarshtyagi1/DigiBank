@@ -41,22 +41,20 @@
         <p class="section-heading">Accounts</p>
         <div class="accounts-card-wrapper">
           <div *ngFor="let user of user?.accountDetails" class="accounts-card">
-            <p>Account No.</p>
-            <p>{{ user.accountNumber }}</p>
-            <div>
+            <div class="accountDetails-wrapper">
+              <p>Account No.</p>
+              <p>{{ user.accountNumber | accountNumber }}</p>
+            </div>
+            <div class="accountDetails-wrapper">
               <p class="title">Total Balance</p>
-              <p class="total-balance">{{ user.balance + user.deposit }}</p>
+              <p class="total-balance">{{ user.balance | currencyPipe }}</p>
             </div>
-            <div>
+            <div class="accountDetails-wrapper">
               <p class="sub-title">Savings</p>
-              <p class="sub-value">{{ user.balance }}</p>
-            </div>
-            <div>
-              <p class="sub-title">Deposits</p>
-              <p class="sub-value">{{ user.deposit }}</p>
+              <p class="sub-value">{{ user.balance | currencyPipe }}</p>
             </div>
             <button mat-stroked-button (click)="navTrans(user.accountNumber)">
-              Transactions
+              Account Details
             </button>
           </div>
         </div>
@@ -65,10 +63,10 @@
             *ngFor="let item of accountsBlock"
             class="accounts-block-menu-item"
           >
-            <div class="icon-wrapper">
-              <fa-icon [icon]="faSlider"></fa-icon>
+            <div matRipple class="icon-wrapper">
+              <fa-icon [icon]="item.icon"></fa-icon>
             </div>
-            <p>{{ item }}</p>
+            <p>{{ item.name }}</p>
           </div>
         </div>
       </div>
@@ -80,9 +78,9 @@
             class="accounts-block-menu-item"
           >
             <div class="icon-wrapper">
-              <fa-icon [icon]="faSlider"></fa-icon>
+              <fa-icon [icon]="item.icon"></fa-icon>
             </div>
-            <p>{{ item }}</p>
+            <p>{{ item.name }}</p>
           </div>
         </div>
       </div>

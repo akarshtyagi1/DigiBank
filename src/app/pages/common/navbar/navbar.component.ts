@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isLoginPage = event.url === '/login';
+        this.isLoginPage = event.url === '/login' || event.url === '/';
       }
     });
   }
@@ -25,5 +25,6 @@ export class NavbarComponent implements OnInit {
   logout() {
     this.isLoggedIn = false;
     this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

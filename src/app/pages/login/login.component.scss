@@ -53,10 +53,10 @@
       width: 55%;
       padding: 30px;
 
-      p {
+      p.form-heading {
         font-weight: 600;
         font-size: 1.3rem;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
       }
 
       form {
@@ -73,7 +73,6 @@
           input {
             font-size: 1rem;
             padding: 2px;
-
             &:focus,
             &:active {
               outline: none;
@@ -128,6 +127,16 @@
 
 .error-border {
   border: 1px solid red;
-  box-shadow: 0 0 2px #ff0000;
+  box-shadow: 0 0 1px #ff0000;
   outline: none;
+}
+
+div.validation-message {
+  display: flex;
+  justify-content: end !important;
+  p {
+    font-size: 13px;
+    width: fit-content;
+    color: red;
+  }
 }

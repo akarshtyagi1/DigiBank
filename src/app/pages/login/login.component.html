@@ -6,7 +6,7 @@
 
   <div class="login-menu">
     <div class="login-menu-left">
-      <p>Login to NetBanking</p>
+      <p class="form-heading">Login to NetBanking</p>
       <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
         <div>
           <label for="customerId">Customer ID/ User ID:</label>
@@ -23,19 +23,39 @@
             matTooltipShowDelay="500"
           />
         </div>
+        <div class="validation-message">
+          <p
+            *ngIf="
+              loginForm.controls['customerId'].hasError('required') &&
+              (loginForm.controls['customerId'].touched || formSubmitted)
+            "
+          >
+            Please enter Customer ID
+          </p>
+        </div>
         <div>
           <label for="password">Password/ Pin:</label>
           <input
             [ngClass]="{
               'error-border':
                 loginForm!.get('password')?.invalid &&
-                loginForm!.get('password')?.touched
+                (loginForm!.get('password')?.touched || formSubmitted)
             }"
             formControlName="password"
             name="password"
             type="password"
             autocomplete="on"
           />
+        </div>
+        <div class="validation-message">
+          <p
+            *ngIf="
+              loginForm.controls['password'].hasError('required') &&
+              (loginForm.controls['password'].touched || formSubmitted)
+            "
+          >
+            Please enter your password
+          </p>
         </div>
         <div class="login-button">
           <button type="submit" mat-raised-button>LOGIN</button>

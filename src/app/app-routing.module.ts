@@ -8,16 +8,19 @@ import { TransactionHistoryComponent } from './pages/transaction-history/transac
 import { TransferComponent } from './pages/transfer/transfer.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   {
     path: 'dashboard',
     component: UserDashboardComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'transactions/:accountNumber',
     component: TransactionHistoryComponent,
+    canActivate: [authGuard],
   },
-  { path: 'transfer', component: TransferComponent },
+  { path: 'transfer', component: TransferComponent, canActivate: [authGuard] },
 ];
 
 @NgModule({

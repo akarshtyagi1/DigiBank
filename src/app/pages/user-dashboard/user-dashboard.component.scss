@@ -13,6 +13,7 @@
     .accounts-block-menu-item {
       text-align: center;
       padding: 5px;
+
       .icon-wrapper {
         width: 40px;
         margin: auto;
@@ -20,6 +21,7 @@
         border-radius: 100px;
         background-color: $primary-bg-light;
         color: white;
+        cursor: pointer;
       }
       p {
         margin-top: 10px;
@@ -28,8 +30,6 @@
     }
   }
 }
-
-
 
 .dashboard-main {
   height: 100%;
@@ -69,24 +69,32 @@
           border: 0.5px solid lightgray;
           border-radius: 20px;
 
+          .accountDetails-wrapper {
+            display: flex;
+            justify-content: space-between;
+          }
+
           div {
             margin-bottom: 5px;
           }
 
           .title {
-            font-size: 0.8rem;
+            font-size: 14px;
           }
           .total-balance {
             font-weight: 700;
+            color: $primary-bg;
           }
           .sub-title {
-            font-weight: 700;
-            font-size: 0.8rem;
-            color: $primary-bg;
+            font-size: 14px;
           }
           .sub-value {
             font-weight: 700;
-            font-size: 0.7rem;
+            font-size: 14px;
+          }
+
+          button {
+            margin-top: 10px;
           }
         }
       }

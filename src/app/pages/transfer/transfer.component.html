@@ -1,6 +1,7 @@
 <div class="transfer-form">
   <div class="transfer-form-inner">
     <div class="form-wrapper shadow">
+      <p style="font-size: 25px; font-weight: 400">Transfer Funds</p>
       <form [formGroup]="transferForm" (ngSubmit)="transfer()">
         <div class="amount-wrapper">
           <p>Amount:</p>
@@ -26,7 +27,11 @@
               *ngFor="let account of user?.accountDetails"
             >
               {{
-                (account.accountNumber | accountNumber) + "-" + user?.firstName
+                (account.accountNumber | accountNumber) +
+                  "-" +
+                  user?.firstName +
+                  "-" +
+                  (account.balance | currencyPipe)
               }}
             </option>
           </select>
@@ -52,8 +57,10 @@
             </option>
           </select>
         </div>
-        <div class="button-wrapper">
-          <button mat-raised-button>Transfer Funds</button>
+        <div style="margin-top: 50px" class="button-wrapper">
+          <button [disabled]="isTransfered" mat-raised-button>
+            Transfer Funds
+          </button>
         </div>
       </form>
     </div>

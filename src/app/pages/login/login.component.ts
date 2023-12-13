@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../core/service/auth/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,17 +14,22 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup = this.fb.group({
     customerId: ['', Validators.required],
     password: ['', Validators.required],
-  }); 
+  });
 
   faShield = faShieldAlt;
-
+  message: string = '';
   constructor(
     private fb: FormBuilder,
     private login: AuthService,
-    private router: Router
+    public router: Router,
+    private toast: ToastrService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.login.isAuthenticated()) {
+      this.router.navigate(['/dashboard']);
+    }
+  }
   formSubmitted = false;
   onLogin() {
     this.formSubmitted = true;
@@ -35,7 +41,10 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/dashboard']);
           }
         },
-        error: (error) => console.log(error),
+        error: (error) => {
+          this.toast.error(error.message);
+          console.log(error);
+        },
       });
     } else {
       console.error('LoginForm is not initialized or is invalid.');

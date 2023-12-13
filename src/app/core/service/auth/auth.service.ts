@@ -22,7 +22,6 @@ export class AuthService {
             user.customerId === credentials.customerId &&
             user.password === credentials.password
         );
-        console.log(authenticatedUser);
         if (authenticatedUser) {
           this.isLoggedIn = true;
           sessionStorage.setItem(
@@ -32,7 +31,7 @@ export class AuthService {
           sessionStorage.setItem('isAuthenticated', 'true');
           return authenticatedUser;
         } else {
-          throw new Error('Invalid User');
+          throw new Error('Invalid Credentials');
         }
       })
     );
@@ -60,6 +59,6 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return this.isLoggedIn;
+    return sessionStorage.getItem('isAuthenticated') === 'true';
   }
 }

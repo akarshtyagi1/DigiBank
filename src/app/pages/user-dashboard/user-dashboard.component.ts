@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { faSlidersH, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faSlidersH,
+  faChevronRight,
+  faMobile,
+  faMoneyBill,
+  faBolt,
+  faBullhorn,
+  faSimCard,
+  faTag,
+} from '@fortawesome/free-solid-svg-icons';
+import { faTelegram, faCcVisa } from '@fortawesome/free-brands-svg-icons';
+
 import { AuthService } from '../../core/service/auth/auth.service';
 import { User } from '../../core/models/class/user';
 import { Router } from '@angular/router';
@@ -14,14 +25,28 @@ export class UserDashboardComponent implements OnInit {
 
   faSlider = faSlidersH;
   faChevRight = faChevronRight;
+  faMobile = faMobile;
+  faTelegram = faTelegram;
+  faMoney = faMoneyBill;
+  faCard = faCcVisa;
+  faBolt = faBolt;
+  faMF = faBullhorn;
+  faSim = faSimCard;
+  faFastTag = faTag;
+
   accountsBlock = [
-    'Manage Limit',
-    'Recharge',
-    'Send Money',
-    'Open FD',
-    'Debit/ATM',
+    { name: 'Manage Limit', icon: this.faSlider },
+    { name: 'Recharge', icon: this.faMobile },
+    { name: 'Send Money', icon: this.faTelegram },
+    { name: 'Open FD', icon: this.faMoney },
+    { name: 'Debit/ATM', icon: this.faCard },
   ];
-  centerBlock = ['Electricity', 'Mutual Funds', 'PostPaid', 'FastTag'];
+  centerBlock = [
+    { name: 'Electricity', icon: this.faBolt },
+    { name: 'Mutual Funds', icon: this.faMF },
+    { name: 'Prepaid', icon: this.faSim },
+    { name: 'FastTag', icon: this.faFastTag },
+  ];
 
   ngOnInit(): void {
     this.authService.getAuthenticatedUser()?.subscribe({

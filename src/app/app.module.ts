@@ -26,6 +26,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { TransferComponent } from './pages/transfer/transfer.component';
 import { MatOptionModule } from '@angular/material/core';
 import { ToastrModule } from 'ngx-toastr';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatRippleModule,
     MatOptionModule,
     ToastrModule.forRoot(),
+    MatBadgeModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

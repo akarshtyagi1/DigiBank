@@ -9,6 +9,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { AccountDetails } from '../../core/models/class/account-details';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { PdfService } from '../../core/service/pdf/pdf.service';
 
 @Component({
   selector: 'app-transaction-history',
@@ -20,7 +21,8 @@ export class TransactionHistoryComponent implements OnInit {
     private userServices: UserService,
     private activatedRoute: ActivatedRoute,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private pdf: PdfService
   ) {}
 
   @ViewChild(MatSort) sort!: MatSort;
@@ -37,7 +39,7 @@ export class TransactionHistoryComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.accountNumber = params['accountNumber'];
     });
-                                        
+
     this.userServices
       .getTrans(this.userServices.getCustomerId(), this.accountNumber)
       .subscribe((data) => {
@@ -87,4 +89,22 @@ export class TransactionHistoryComponent implements OnInit {
     'balance',
     'timeStamp',
   ];
+
+  forPDF: string[] = [
+    'from',
+    'to',
+    'type',
+    'name',
+    'amount',
+    'balance',
+    'timeStamp',
+  ];
+
+  downloadPdf() {
+    const data = this.dataSource.data.map((item) =>
+      this.forPDF.map((col) => item[col])
+    );
+    const headers = this.forPDF.map((col) => col.toUpperCase());
+    this.pdf.generatePdf(data, headers, 'table-data');
+  }
 }

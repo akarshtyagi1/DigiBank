@@ -16,18 +16,29 @@
 
   .navbar-level-1 {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     padding-bottom: 8px;
     padding-top: 3px;
     color: $white;
 
-    p {
-      border-right: 1px solid white;
-      padding: 0 10px;
-      margin-right: 4px;
+    .account-details{
+      display: flex;
+      .last-login{
+        font-size: 13px;
+        line-height: 1.7;
+      }
+    }
 
-      &:hover {
-        color: lightcoral;
+    .links {
+      display: flex;
+      p {
+        border-right: 1px solid white;
+        padding: 0 10px;
+        margin-right: 4px;
+        cursor: pointer;
+        &:hover {
+          color: lightcoral;
+        }
       }
     }
   }
@@ -47,6 +58,7 @@
       span {
         color: lightcoral;
       }
+      cursor: pointer;
     }
 
     .navbar-level-2-right {
