@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './pages/common/navbar/navbar.component';
 import { FooterComponent } from './pages/common/footer/footer.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -27,6 +27,9 @@ import { TransferComponent } from './pages/transfer/transfer.component';
 import { MatOptionModule } from '@angular/material/core';
 import { ToastrModule } from 'ngx-toastr';
 import { MatBadgeModule } from '@angular/material/badge';
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -59,8 +62,18 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatOptionModule,
     ToastrModule.forRoot(),
     MatBadgeModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

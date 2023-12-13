@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'digibank-prototype';
 
-  constructor() {}
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['en', 'fr', 'ar']);
+    translate.setDefaultLang('en');
+  }
+
+  switchLang(lang: string) {
+    debugger;
+    this.translate.setDefaultLang(lang);
+  }
 }

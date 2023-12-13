@@ -1,0 +1,19 @@
+{
+  "heading": "Welcome to DigiBank NetBanking",
+  "message": "Dear Customer, Welcome to the new login page of DigiBank NetBanking. Its lighter look and feel is designed to give you the best possible user experience. Please continue to login using your customer ID and password.",
+  "form-title": "Login to NetBanking",
+  "customerId": "Customer ID/ User ID:",
+  "password": "Password/ PIN:",
+  "securityMsg": "Your security is of utmost importance.",
+  "registerHeading": "First Time User?",
+  "register": "Register Now",
+  "registerMsg": "for a host of convenient features",
+  "text-1": "We have added a host of new features!",
+  "text-2": "You can now do so much more:",
+  "text-3": "Anywhere access through Desktop or mobile",
+  "text-4": "Enhanced security measures",
+  "cidValidationText": "Please enter Customer ID",
+  "passwordValidationText": "Please enter your password",
+  "login": "LOGIN",
+  "credentialsValidationText": "Invalid Credentials"
+}

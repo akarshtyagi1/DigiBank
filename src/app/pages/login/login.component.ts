@@ -4,6 +4,7 @@ import { faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../core/service/auth/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -22,8 +23,12 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private login: AuthService,
     public router: Router,
-    private toast: ToastrService
-  ) {}
+    private toast: ToastrService,
+    public translate: TranslateService
+  ) {
+    translate.addLangs(['en', 'fr', 'ar']);
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit(): void {
     if (this.login.isAuthenticated()) {
@@ -42,7 +47,9 @@ export class LoginComponent implements OnInit {
           }
         },
         error: (error) => {
-          this.toast.error(error.message);
+          this.toast.error(error.message, '', {
+            positionClass: 'toast-custom-position',
+          });
           console.log(error);
         },
       });

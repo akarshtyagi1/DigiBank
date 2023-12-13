@@ -1,15 +1,15 @@
 <div class="login-main">
   <div class="login-header">
     <h1>Digi<span>Bank</span></h1>
-    <p>Welcome to DigiBank NetBanking</p>
+    <p>{{ "heading" | translate }}</p>
   </div>
 
   <div class="login-menu">
     <div class="login-menu-left">
-      <p class="form-heading">Login to NetBanking</p>
+      <p class="form-heading">{{ "form-title" | translate }}</p>
       <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
         <div>
-          <label for="customerId">Customer ID/ User ID:</label>
+          <label for="customerId">{{ "customerId" | translate }}</label>
           <input
             [ngClass]="{
               'error-border':
@@ -30,11 +30,11 @@
               (loginForm.controls['customerId'].touched || formSubmitted)
             "
           >
-            Please enter Customer ID
+            {{ "cidValidationText" | translate }}
           </p>
         </div>
         <div>
-          <label for="password">Password/ Pin:</label>
+          <label for="password">{{ "password" | translate }}</label>
           <input
             [ngClass]="{
               'error-border':
@@ -54,30 +54,34 @@
               (loginForm.controls['password'].touched || formSubmitted)
             "
           >
-            Please enter your password
+            {{ "passwordValidationText" | translate }}
           </p>
         </div>
         <div class="login-button">
-          <button type="submit" mat-raised-button>LOGIN</button>
+          <button type="submit" mat-raised-button>
+            {{ "login" | translate }}
+          </button>
         </div>
       </form>
       <div class="message">
-        Dear Customer, <br />Welcome to the new login page of DigiBank
-        NetBanking. Its lighter look and feel is designed to give you the best
-        possible user experience. Please continue to login using your customer
-        ID and password.
+        {{ "message" | translate }}
       </div>
     </div>
     <div class="login-menu-right">
       <div><fa-icon [icon]="faShield"></fa-icon></div>
-      <p>Your security is of utmost importance.</p>
-      <h4>First Time User?</h4>
-      <p><a href="">Register Now</a> for a host of convenient features</p>
-      <h4>We have added a host of new features!</h4>
+      <p>{{ "securityMsg" | translate }}</p>
+      <h4>{{ "registerHeading" | translate }}</h4>
+      <p>
+        <a href="">{{ "register" | translate }}</a
+        >{{ "registerMsg" | translate }}
+      </p>
+      <h4>{{ "text-1" | translate }}</h4>
       <ul>
-        You can now do so much more:
-        <li>Anywhere access through Desktop or mobile</li>
-        <li>Enhanced security measures</li>
+        {{
+          "text-2" | translate
+        }}
+        <li>{{ "text-3" | translate }}</li>
+        <li>{{ "text-4" | translate }}</li>
       </ul>
     </div>
   </div>
