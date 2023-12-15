@@ -1,0 +1,58 @@
+<div class="dashboard-main">
+  <div class="dashboard-inner">
+    <div class="dashboard-main-left">left</div>
+    <div class="dashboard-main-center">
+      <div class="accounts-block">
+        <p class="section-heading">Accounts</p>
+        <div class="accounts-card-wrapper">
+          <div *ngFor="let user of user?.accountDetails" class="accounts-card">
+            <p>Account No.</p>
+            <p>{{ user.accountNumber }}</p>
+            <div>
+              <p class="title">Total Balance</p>
+              <p class="total-balance">{{ user.balance + user.deposit }}</p>
+            </div>
+            <div>
+              <p class="sub-title">Savings</p>
+              <p class="sub-value">{{ user.balance }}</p>
+            </div>
+            <div>
+              <p class="sub-title">Deposits</p>
+              <p class="sub-value">{{ user.deposit }}</p>
+            </div>
+            <button mat-stroked-button (click)="navTrans(user.accountNumber)">
+              Transactions
+            </button>
+          </div>
+        </div>
+        <div class="accounts-block-menu">
+          <div
+            *ngFor="let item of accountsBlock"
+            class="accounts-block-menu-item"
+          >
+            <div class="icon-wrapper">
+              <fa-icon [icon]="faSlider"></fa-icon>
+            </div>
+            <p>{{ item }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-main-center-menu">
+        <div class="accounts-block-menu">
+          <div
+            *ngFor="let item of centerBlock"
+            class="accounts-block-menu-item"
+          >
+            <div class="icon-wrapper">
+              <fa-icon [icon]="faSlider"></fa-icon>
+            </div>
+            <p>{{ item }}</p>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+    <div class="dashboard-main-right">right</div>
+  </div>
+</div>

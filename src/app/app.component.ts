@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UserService } from './core/service/user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,5 @@ import { UserService } from './core/service/user/user.service';
 export class AppComponent {
   title = 'digibank-prototype';
 
-  constructor(private userService: UserService) {
-    console.log(userService.getUsers());
-  }
+  constructor() {}
 }

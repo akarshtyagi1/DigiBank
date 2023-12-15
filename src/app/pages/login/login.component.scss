@@ -1,0 +1,122 @@
+@import "../../../globalStyles.scss";
+
+.login-main {
+  height: 100%;
+
+  .login-header {
+    background-color: $primary-bg;
+    color: $white;
+    text-align: center;
+    padding-bottom: 15px;
+    box-shadow: 1px 5px 10px 0 rgba(198, 198, 198, 0.5);
+
+    h1 {
+      font-style: italic;
+      padding: 5px;
+      span {
+        color: lightcoral;
+      }
+    }
+  }
+
+  .login-menu {
+    display: flex;
+    width: 70%;
+    background-color: $white;
+    margin: auto;
+    margin-top: 30px;
+    height: fit-content;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 1px 5px 10px 0 rgba(198, 198, 198, 0.5);
+
+    .login-menu-right {
+      width: 45%;
+      padding: 30px;
+      font-size: 1rem;
+
+      h4 {
+        margin-top: 20px;
+      }
+      div {
+        text-align: center;
+        color: $primary-bg;
+        font-size: 5rem;
+      }
+
+      li {
+        margin-left: 20px;
+      }
+    }
+
+    .login-menu-left {
+      width: 55%;
+      padding: 30px;
+
+      p {
+        font-weight: 600;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+      }
+
+      form {
+        div {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 20px;
+          margin: 5px 0;
+
+          label {
+            font-size: 1rem;
+            line-height: 2;
+          }
+          input {
+            font-size: 1rem;
+            padding: 2px;
+          }
+        }
+        div.login-button {
+          justify-content: end;
+
+          button {
+            background-color: $primary-bg;
+            color: white;
+          }
+        }
+      }
+
+      .message {
+        background-color: $primary-bg;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        margin-top: 20px;
+        margin-right: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.login-footer {
+  margin-top: 100px;
+  .login-footer-inner {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    padding: 30px 0;
+    border-top: 1px solid gray;
+    justify-content: space-between;
+
+    .login-footer-left {
+      display: flex;
+
+      a {
+        margin: 0 10px;
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
+}

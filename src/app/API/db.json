@@ -2,23 +2,80 @@
   "users": [
     {
       "id": 1,
+      "customerId": "1234567890",
+      "password": "admin",
       "firstName": "Akarsh",
-      "lastName": "Tyagi"
+      "lastName": "Tyagi",
+      "accountDetails": [
+        {
+          "accountNumber": "2897349198",
+          "type": "savings",
+          "balance": 45000,
+          "deposit": 150000,
+          "transactions": []
+        },
+        {
+          "accountNumber": "2897343234",
+          "type": "savings",
+          "balance": 40000,
+          "deposit": 150000,
+          "transactions": [
+            {
+              "type": "debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 40000,
+              "name": "Hardik Gaba",
+              "timeStamp": "2023-12-04T18:25:43.511Z"
+            },
+            {
+              "type": "credit",
+              "from": "2351436143",
+              "to": "2897343234",
+              "amount": 50000,
+              "closing": 50000,
+              "name": "Oracle",
+              "timeStamp": "2023-12-02T18:25:43.511Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 2,
+      "customerId": "5678901234",
+      "password": "admindGaba",
       "firstName": "Hardik",
-      "lastName": "Gaba"
+      "lastName": "Gaba",
+      "accountDetails": [
+        {
+          "accountNumber": "2413412152",
+          "type": "savings",
+          "balance": 60000,
+          "deposit": 200000,
+          "transactions": [
+            {
+              "type": "credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 60000,
+              "name": "Akarsh Tyagi",
+              "timeStamp": "2023-12-04T18:25:43.511Z"
+            },
+            {
+              "type": "credit",
+              "from": "2351436143",
+              "to": "2413412152",
+              "amount": 50000,
+              "closing": 50000,
+              "name": "Oracle",
+              "timeStamp": "2023-12-03T18:25:43.511Z"
+            }
+          ]
+        }
+      ]
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

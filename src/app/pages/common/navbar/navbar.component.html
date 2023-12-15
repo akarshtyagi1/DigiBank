@@ -1,1 +1,32 @@
-<p>navbar works!</p>
+<div *ngIf="!isLoginPage" class="navbar-main">
+  <div class="navbar-inner">
+    <div class="navbar-level-1">
+      <p>About Us</p>
+      <p>Language</p>
+      <p>Customer Services</p>
+      <p>1800 1800</p>
+    </div>
+    <div class="navbar-level-2">
+      <div class="navbar-level-2-left">
+        <h2>Digi<span>Bank</span></h2>
+      </div>
+      <div class="navbar-level-2-right">
+        <div class="navbar-search">
+          <input placeholder="Search services" />
+        </div>
+        <button mat-raised-button *ngIf="!isLoggedIn" routerLink="/login">
+          Login
+        </button>
+        <button
+          (click)="logout()"
+          mat-raised-button
+          routerLink="/login"
+          *ngIf="isLoggedIn"
+        >
+          LogOut
+        </button>
+        <fa-icon [icon]="faBell"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>

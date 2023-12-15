@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
-import { MasterService } from '../master/master.service';
-import { APIConstant } from '../../constant/APIConstant';
-import { environment } from '../../../../environments/environment.development';
+import { AuthService } from '../auth/auth.service';
+import { Transactions } from '../../models/class/transactions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private master: MasterService) {}
+  constructor(private authService: AuthService) {}
 
-  getUsers() {
-    this.master
-      .get(environment.api + APIConstant.user.getAllUsers)
-      .subscribe((data) => console.log(data));
+  getTransactions(accountNumber: string): Transactions[] | undefined {
+    const accountDetails =
+      this.authService.getAuthenticatedUser()?.accountDetails;
+    if (accountDetails) {
+      for (let i = 0; i < accountDetails?.length; i++) {
+        if (accountDetails[i].accountNumber === accountNumber)
+          return accountDetails[i].transactions;
+      }
+    }
+
+    return undefined;
   }
 }

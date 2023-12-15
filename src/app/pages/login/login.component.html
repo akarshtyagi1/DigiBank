@@ -1,1 +1,69 @@
-<p>login works!</p>
+<div class="login-main">
+  <div class="login-header">
+    <h1>Digi<span>Bank</span></h1>
+    <p>Welcome to DigiBank NetBanking</p>
+  </div>
+
+  <div class="login-menu">
+    <div class="login-menu-left">
+      <p>Login to NetBanking</p>
+      <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
+        <div>
+          <label for="customerId">Customer ID/ User ID:</label>
+          <input
+            name="customerId"
+            required
+            formControlName="customerId"
+            matTooltip="To know your customer ID, refer your welcome letter/ cheque book."
+            matTooltipPosition="above"
+            matTooltipShowDelay="500"
+          />
+        </div>
+        <div>
+          <label for="password">Password/ Pin:</label>
+          <input
+            formControlName="password"
+            name="password"
+            type="password"
+            required
+            autocomplete="on"
+          />
+        </div>
+        <div class="login-button">
+          <button mat-raised-button>LOGIN</button>
+        </div>
+      </form>
+      <div class="message">
+        Dear Customer, <br />Welcome to the new login page of DigiBank
+        NetBanking. Its lighter look and feel is designed to give you the best
+        possible user experience. Please continue to login using your customer
+        ID and password.
+      </div>
+    </div>
+    <div class="login-menu-right">
+      <div><fa-icon [icon]="faShield"></fa-icon></div>
+      <p>Your security is of utmost importance.</p>
+      <h4>First Time User?</h4>
+      <p><a href="">Register Now</a> for a host of convenient features</p>
+      <h4>We have added a host of new features!</h4>
+      <ul>
+        You can now do so much more:
+        <li>Anywhere access through Desktop or mobile</li>
+        <li>Enhanced security measures</li>
+      </ul>
+    </div>
+  </div>
+  <div class="login-footer">
+    <div class="login-footer-inner">
+      <div class="login-footer-left">
+        <a href="#">Terms and conditions</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Code of Commitment</a>
+      </div>
+      <div class="login-footer-right">
+        <p>Copyright 2023. All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
