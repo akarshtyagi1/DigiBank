@@ -32,7 +32,7 @@
     </div>
     <div class="transaction-table">
       <p>Transactions</p>
-      <button (click)="downloadPdf()">Download as PDF</button>
+      <!-- <button (click)="downloadPdf()">Download as PDF</button> -->
       <div *ngIf="transactions?.length != 0" class="table-wrapper shadow">
         <table mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="from">

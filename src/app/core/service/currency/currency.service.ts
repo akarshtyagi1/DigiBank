@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CurrencyService {
   constructor() {}
-  currentCurrency: string = 'JPY';
+  currentCurrency: string = 'AUD';
 
   currencySymbols: { [key: string]: string } = {
     USD: '$', // United States Dollar

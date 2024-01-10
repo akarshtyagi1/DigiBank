@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start-json-server": "json-server --watch ./API/db.json",
+    "compodoc": "npx compodoc -p tsconfig.app.json"
   },
   "private": true,
   "dependencies": {
@@ -31,7 +33,8 @@
     "pdfmake": "^0.2.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.2"
+    "zone.js": "~0.14.2",
+    "json-server": "0.17.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.1",
