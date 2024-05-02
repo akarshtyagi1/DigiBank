@@ -2,15 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/service/auth/auth.service';
 import { UserService } from '../../core/service/user/user.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { User } from '../../core/models/class/user';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { ToastrService } from 'ngx-toastr';
+import { AccountNumberPipe } from '../../shared/pipe/account-number.pipe';
+import { CurrencyPipePipe } from '../../shared/pipe/currency-pipe.pipe';
+import { MatButtonModule } from '@angular/material/button';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-transfer',
-  templateUrl: './transfer.component.html',
-  styleUrl: './transfer.component.scss',
+    selector: 'app-transfer',
+    templateUrl: './transfer.component.html',
+    styleUrl: './transfer.component.scss',
+    standalone: true,
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        NgFor,
+        MatButtonModule,
+        CurrencyPipePipe,
+        AccountNumberPipe,
+    ],
 })
 export class TransferComponent implements OnInit {
   constructor(

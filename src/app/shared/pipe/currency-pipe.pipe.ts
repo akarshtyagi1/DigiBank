@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { CurrencyService } from '../../core/service/currency/currency.service';
 
 @Pipe({
-  name: 'currencyPipe',
+    name: 'currencyPipe',
+    standalone: true,
 })
 export class CurrencyPipePipe implements PipeTransform {
   transform(value: number | undefined, ...args: unknown[]): unknown {

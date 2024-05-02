@@ -1,0 +1,746 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "customerId": "1234567890",
+      "password": "admin",
+      "firstName": "Akarsh",
+      "lastName": "Tyagi",
+      "beneficiaries": [
+        {
+          "name": "Hardik Gaba",
+          "accountNumber": "2413412152"
+        }
+      ],
+      "accountDetails": [
+        {
+          "accountNumber": "2897349198",
+          "type": "savings",
+          "balance": 1488667,
+          "deposit": 150000,
+          "transactions": [
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 33000,
+              "name": "",
+              "timeStamp": "2023-12-12T10:35:23.594Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 23000,
+              "name": "",
+              "timeStamp": "2023-12-12T17:33:56.367Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 22000,
+              "name": "",
+              "timeStamp": "2023-12-12T18:41:27.917Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 21000,
+              "name": "",
+              "timeStamp": "2023-12-12T18:43:03.934Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 50,
+              "closing": 20950,
+              "name": "",
+              "timeStamp": "2023-12-12T18:43:36.556Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1210,
+              "closing": 19740,
+              "name": "",
+              "timeStamp": "2023-12-12T18:45:19.691Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 18740,
+              "name": "",
+              "timeStamp": "2023-12-12T18:45:46.556Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 11,
+              "closing": 18729,
+              "name": "",
+              "timeStamp": "2023-12-12T18:47:34.358Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 17729,
+              "name": "",
+              "timeStamp": "2023-12-12T19:01:57.457Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 16729,
+              "name": "",
+              "timeStamp": "2023-12-12T19:03:16.024Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 16629,
+              "name": "",
+              "timeStamp": "2023-12-12T19:05:04.029Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 16529,
+              "name": "",
+              "timeStamp": "2023-12-12T19:08:11.521Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 16429,
+              "name": "",
+              "timeStamp": "2023-12-12T19:08:18.432Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 15429,
+              "name": "",
+              "timeStamp": "2023-12-12T19:41:27.491Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 15329,
+              "name": "",
+              "timeStamp": "2023-12-12T19:44:05.996Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 150,
+              "closing": 15179,
+              "name": "",
+              "timeStamp": "2023-12-12T19:45:23.922Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 2,
+              "closing": 15177,
+              "name": "",
+              "timeStamp": "2023-12-12T19:46:33.780Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 6565,
+              "closing": 8612,
+              "name": "",
+              "timeStamp": "2023-12-12T19:57:35.683Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 7612,
+              "name": "",
+              "timeStamp": "2023-12-12T20:37:53.213Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 7512,
+              "name": "",
+              "timeStamp": "2023-12-12T20:47:26.388Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 6512,
+              "name": "",
+              "timeStamp": "2023-12-12T20:48:17.731Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 5512,
+              "name": "",
+              "timeStamp": "2023-12-12T21:31:49.640Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1,
+              "closing": 1551222,
+              "name": "",
+              "timeStamp": "2023-12-13T06:22:07.251Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 55,
+              "closing": 1551167,
+              "name": "",
+              "timeStamp": "2023-12-13T08:30:10.578Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 50000,
+              "closing": 1501167,
+              "name": "",
+              "timeStamp": "2023-12-13T08:41:14.471Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 500,
+              "closing": 1500667,
+              "name": "",
+              "timeStamp": "2023-12-13T08:45:52.358Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 1490667,
+              "name": "",
+              "timeStamp": "2023-12-13T11:10:57.462Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 1489667,
+              "name": "",
+              "timeStamp": "2023-12-13T12:37:02.475Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 1488667,
+              "name": "",
+              "timeStamp": "2023-12-15T05:38:10.900Z"
+            }
+          ]
+        },
+        {
+          "accountNumber": "2897343234",
+          "type": "saving",
+          "balance": 33347,
+          "deposit": 150000,
+          "transactions": [
+            {
+              "type": "debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 40000,
+              "name": "Hardik Gaba",
+              "timeStamp": "2023-12-04T18:25:43.511Z"
+            },
+            {
+              "type": "credit",
+              "from": "2351436143",
+              "to": "2897343234",
+              "amount": 50000,
+              "closing": 50000,
+              "name": "Oracle",
+              "timeStamp": "2023-12-02T18:25:43.511Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 39810,
+              "name": "",
+              "timeStamp": "2023-12-12T18:44:43.506Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 38810,
+              "name": "",
+              "timeStamp": "2023-12-13T04:46:35.203Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 37810,
+              "name": "",
+              "timeStamp": "2023-12-13T04:58:23.673Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 123,
+              "closing": 37687,
+              "name": "",
+              "timeStamp": "2023-12-13T05:00:22.288Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 1340,
+              "closing": 36347,
+              "name": "",
+              "timeStamp": "2023-12-13T05:02:08.742Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 2000,
+              "closing": 34347,
+              "name": "",
+              "timeStamp": "2023-12-13T08:43:22.610Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 33347,
+              "name": "",
+              "timeStamp": "2023-12-13T10:32:48.056Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "customerId": "5678901234",
+      "password": "admindGaba",
+      "firstName": "Hardik",
+      "lastName": "Gaba",
+      "beneficiaries": [
+        {
+          "name": "Akarsh Tyagi-1",
+          "accountNumber": "2897343234"
+        },
+        {
+          "name": "Akarsh Tyagi-2",
+          "accountNumber": "2897349198"
+        }
+      ],
+      "accountDetails": [
+        {
+          "accountNumber": "2413412152",
+          "type": "saving",
+          "balance": 158607,
+          "deposit": 200000,
+          "transactions": [
+            {
+              "type": "credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 60000,
+              "name": "Akarsh Tyagi",
+              "timeStamp": "2023-12-04T18:25:43.511Z"
+            },
+            {
+              "type": "credit",
+              "from": "2351436143",
+              "to": "2413412152",
+              "amount": 50000,
+              "closing": 50000,
+              "name": "Oracle",
+              "timeStamp": "2023-12-03T18:25:43.511Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 62000,
+              "name": "",
+              "timeStamp": "2023-12-12T10:35:23.622Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 72000,
+              "name": "",
+              "timeStamp": "2023-12-12T17:33:56.401Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 73000,
+              "name": "",
+              "timeStamp": "2023-12-12T18:41:27.933Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 74000,
+              "name": "",
+              "timeStamp": "2023-12-12T18:43:03.966Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 50,
+              "closing": 74050,
+              "name": "",
+              "timeStamp": "2023-12-12T18:43:36.562Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 74150,
+              "name": "",
+              "timeStamp": "2023-12-12T18:44:43.586Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1210,
+              "closing": 75360,
+              "name": "",
+              "timeStamp": "2023-12-12T18:45:19.706Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 76360,
+              "name": "",
+              "timeStamp": "2023-12-12T18:45:46.564Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 11,
+              "closing": 76371,
+              "name": "",
+              "timeStamp": "2023-12-12T18:47:34.369Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 77371,
+              "name": "",
+              "timeStamp": "2023-12-12T19:01:57.485Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 78371,
+              "name": "",
+              "timeStamp": "2023-12-12T19:03:16.052Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 78471,
+              "name": "",
+              "timeStamp": "2023-12-12T19:05:04.069Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 78571,
+              "name": "",
+              "timeStamp": "2023-12-12T19:08:11.552Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 78671,
+              "name": "",
+              "timeStamp": "2023-12-12T19:08:18.440Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 79671,
+              "name": "",
+              "timeStamp": "2023-12-12T19:41:27.506Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 79771,
+              "name": "",
+              "timeStamp": "2023-12-12T19:44:06.027Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 150,
+              "closing": 79921,
+              "name": "",
+              "timeStamp": "2023-12-12T19:45:23.955Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 2,
+              "closing": 79923,
+              "name": "",
+              "timeStamp": "2023-12-12T19:46:33.813Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 6565,
+              "closing": 86488,
+              "name": "",
+              "timeStamp": "2023-12-12T19:57:35.715Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 87488,
+              "name": "",
+              "timeStamp": "2023-12-12T20:37:53.245Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 100,
+              "closing": 87588,
+              "name": "",
+              "timeStamp": "2023-12-12T20:47:26.419Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 88588,
+              "name": "",
+              "timeStamp": "2023-12-12T20:48:17.760Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 89588,
+              "name": "",
+              "timeStamp": "2023-12-12T21:31:49.671Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 90588,
+              "name": "",
+              "timeStamp": "2023-12-13T04:46:35.236Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 91588,
+              "name": "",
+              "timeStamp": "2023-12-13T04:58:23.703Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 123,
+              "closing": 91711,
+              "name": "",
+              "timeStamp": "2023-12-13T05:00:22.302Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 1340,
+              "closing": 93051,
+              "name": "",
+              "timeStamp": "2023-12-13T05:02:08.759Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1,
+              "closing": 93052,
+              "name": "",
+              "timeStamp": "2023-12-13T06:22:07.283Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 55,
+              "closing": 93107,
+              "name": "",
+              "timeStamp": "2023-12-13T08:30:10.608Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 50000,
+              "closing": 143107,
+              "name": "",
+              "timeStamp": "2023-12-13T08:41:14.502Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 2000,
+              "closing": 145107,
+              "name": "",
+              "timeStamp": "2023-12-13T08:43:22.642Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 500,
+              "closing": 145607,
+              "name": "",
+              "timeStamp": "2023-12-13T08:45:52.390Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 146607,
+              "name": "",
+              "timeStamp": "2023-12-13T10:32:48.088Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 156607,
+              "name": "",
+              "timeStamp": "2023-12-13T11:10:57.493Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 157607,
+              "name": "",
+              "timeStamp": "2023-12-13T12:37:02.489Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 1000,
+              "closing": 158607,
+              "name": "",
+              "timeStamp": "2023-12-15T05:38:10.906Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

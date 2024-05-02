@@ -1,20 +1,40 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { UserService } from '../../core/service/user/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Transactions } from '../../core/models/class/transactions';
 import { AuthService } from '../../core/service/auth/auth.service';
 import { User } from '../../core/models/class/user';
-import { MatSort } from '@angular/material/sort';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { AccountDetails } from '../../core/models/class/account-details';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { PdfService } from '../../core/service/pdf/pdf.service';
+import { DatePipePipe } from '../../shared/pipe/date-pipe.pipe';
+import { AccountNumberPipe } from '../../shared/pipe/account-number.pipe';
+import { CurrencyPipePipe } from '../../shared/pipe/currency-pipe.pipe';
+import { NgIf, UpperCasePipe } from '@angular/common';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { MatRippleModule } from '@angular/material/core';
 
 @Component({
-  selector: 'app-transaction-history',
-  templateUrl: './transaction-history.component.html',
-  styleUrl: './transaction-history.component.scss',
+    selector: 'app-transaction-history',
+    templateUrl: './transaction-history.component.html',
+    styleUrl: './transaction-history.component.scss',
+    standalone: true,
+    imports: [
+        RouterLink,
+        MatRippleModule,
+        FaIconComponent,
+        NgIf,
+        MatTableModule,
+        MatSortModule,
+        MatPaginatorModule,
+        UpperCasePipe,
+        CurrencyPipePipe,
+        AccountNumberPipe,
+        DatePipePipe,
+    ],
 })
 export class TransactionHistoryComponent implements OnInit {
   constructor(

@@ -31,49 +31,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    LoginComponent,
-    HomeComponent,
-    UserDashboardComponent,
-    TransactionHistoryComponent,
-    CurrencyPipePipe,
-    AccountNumberPipe,
-    DatePipePipe,
-    TransferComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatTooltipModule,
-    FontAwesomeModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule,
-    MatRippleModule,
-    MatOptionModule,
-    ToastrModule.forRoot(),
-    MatBadgeModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpTranslateLoader,
-        deps: [HttpClient],
-      },
-    }),
-  ],
-  providers: [AuthService],
-  bootstrap: [AppComponent],
-})
-export class AppModule {}
+
 export function httpTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
