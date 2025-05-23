@@ -1,0 +1,19 @@
+{
+  "heading": "Bienvenue chez DigiBank NetBanking",
+  "message": "Cher client, Bienvenue sur la nouvelle page de connexion de DigiBank NetBanking. Son aspect et sa sensation de légèreté sont conçus pour vous offrir la meilleure expérience utilisateur possible. Veuillez continuer à vous connecter à l’aide de votre identifiant client et de votre mot de passe.",
+  "form-title": "Connectez-vous à NetBanking",
+  "customerId": "N° de client/ID d’utilisateur :",
+  "password": "Mot de passe/code PIN :",
+  "securityMsg": "Votre sécurité est de la plus haute importance.",
+  "registerHeading": "C’est la première fois que vous l’utilisez ?",
+  "register": "Inscrivez-vous maintenant",
+  "registerMsg": "pour une foule de fonctionnalités pratiques",
+  "text-1": "Nous avons ajouté une foule de nouvelles fonctionnalités !",
+  "text-2": "Vous pouvez maintenant faire beaucoup plus :",
+  "text-3": "Accès en tout lieu via un ordinateur de bureau ou un appareil mobile",
+  "text-4": "Enhanced security measures",
+  "cidValidationText": "Veuillez saisir le numéro de client",
+  "passwordValidationText": "Veuillez saisir votre mot de passe",
+  "login": "Connectez-vous",
+  "credentialsValidationText": "Informations d’identification non valides"
+}
