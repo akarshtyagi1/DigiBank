@@ -60,12 +60,13 @@ export class LoginComponent implements OnInit {
           if (user) {
             this.router.navigate(['/dashboard']);
           }
-        },
+        },  
         error: (error) => {
           this.toast.error(error.message, '', {
             positionClass: 'toast-custom-position',
           });
           console.log(error);
+          
         },
       });
     } else {

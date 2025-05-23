@@ -16,7 +16,7 @@
         {
           "accountNumber": "2897349198",
           "type": "savings",
-          "balance": 1488667,
+          "balance": 1473667,
           "deposit": 150000,
           "transactions": [
             {
@@ -279,13 +279,31 @@
               "closing": 1488667,
               "name": "",
               "timeStamp": "2023-12-15T05:38:10.900Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 5000,
+              "closing": 1483667,
+              "name": "",
+              "timeStamp": "2025-04-28T14:54:34.586Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 1473667,
+              "name": "",
+              "timeStamp": "2025-04-28T14:57:19.047Z"
             }
           ]
         },
         {
           "accountNumber": "2897343234",
           "type": "saving",
-          "balance": 33347,
+          "balance": 20847,
           "deposit": 150000,
           "transactions": [
             {
@@ -368,6 +386,24 @@
               "closing": 33347,
               "name": "",
               "timeStamp": "2023-12-13T10:32:48.056Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 23347,
+              "name": "",
+              "timeStamp": "2024-06-07T11:40:56.925Z"
+            },
+            {
+              "type": "Debit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 2500,
+              "closing": 20847,
+              "name": "",
+              "timeStamp": "2025-04-28T15:20:34.971Z"
             }
           ]
         }
@@ -393,7 +429,7 @@
         {
           "accountNumber": "2413412152",
           "type": "saving",
-          "balance": 158607,
+          "balance": 186107,
           "deposit": 200000,
           "transactions": [
             {
@@ -737,6 +773,42 @@
               "closing": 158607,
               "name": "",
               "timeStamp": "2023-12-15T05:38:10.906Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 168607,
+              "name": "",
+              "timeStamp": "2024-06-07T11:40:56.933Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 5000,
+              "closing": 173607,
+              "name": "",
+              "timeStamp": "2025-04-28T14:54:34.607Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897349198",
+              "to": "2413412152",
+              "amount": 10000,
+              "closing": 183607,
+              "name": "",
+              "timeStamp": "2025-04-28T14:57:19.062Z"
+            },
+            {
+              "type": "Credit",
+              "from": "2897343234",
+              "to": "2413412152",
+              "amount": 2500,
+              "closing": 186107,
+              "name": "",
+              "timeStamp": "2025-04-28T15:20:34.983Z"
             }
           ]
         }
